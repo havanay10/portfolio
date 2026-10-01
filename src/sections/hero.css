@@ -4,16 +4,36 @@
    ============================================ */
 
 .hero {
-  /* Prend toute la hauteur de l'écran moins la navbar */
   min-height: 100vh;
-
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  /* Compense la navbar fixe avec un padding-top */
+  align-items: center;
   padding: calc(var(--navbar-height) + 40px) var(--section-padding-x) 80px;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 440px);
+  align-items: center;
+  gap: clamp(36px, 6vw, 88px);
+}
+
+.hero-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  justify-self: end;
+  transform: translateY(12px);
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 24px 36px rgba(0, 0, 0, 0.28));
 }
 
 /* ---------- TEXTE D'INTRODUCTION ---------- */
@@ -60,7 +80,10 @@
 }
 
 /* Style commun aux deux boutons */
-.hero-buttons button {
+.hero-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px 24px;
   border-radius: 6px;
   cursor: pointer;
@@ -98,7 +121,25 @@
 /* ============================================
    RESPONSIVE
    ============================================ */
+@media (max-width: 1200px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .hero-image {
+    width: min(360px, 82vw);
+    justify-self: center;
+    margin: 0 auto;
+    transform: none;
+  }
+}
+
 @media (max-width: 768px) {
+  .hero-image {
+    width: min(320px, 80vw);
+  }
+
   .hero-title {
     font-size: 40px; /* Titre plus petit sur mobile */
   }
