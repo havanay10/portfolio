@@ -1,0 +1,131 @@
+/* ============================================
+   Navbar.css
+   Barre de navigation fixe en haut
+   ============================================ */
+
+.navbar {
+  width: 100%;
+  height: var(--navbar-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 var(--section-padding-x);
+
+  /* Position fixe pour rester en haut au scroll */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  /* Fond semi-transparent avec flou (effet moderne) */
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Ligne de séparation subtile */
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+/* Change la bordure quand on scrolle (classe à ajouter via JS plus tard) */
+.navbar.scrolled {
+  border-bottom-color: var(--border-color);
+}
+
+/* ---------- LOGO ---------- */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* ---------- LIENS ---------- */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 15px;
+  position: relative;
+  padding: 4px 0;
+  transition: color var(--transition);
+}
+
+/* Effet de soulignement animé au survol */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ---------- BOUTON HAMBURGER (masqué sur desktop) ---------- */
+.menu-button {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 28px;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.menu-button:hover {
+  color: var(--accent);
+}
+
+/* ============================================
+   VERSION MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 5%;
+    position: relative; /* Nécessaire pour positionner le menu */
+  }
+
+  /* Affiche le bouton hamburger */
+  .menu-button {
+    display: block;
+  }
+
+  /* Menu fermé par défaut */
+  .nav-links {
+    display: none;
+  }
+
+  /* Menu ouvert : prend toute la largeur sous la navbar */
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    position: absolute;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+
+    padding: 25px 0;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+  }
+}

@@ -1,0 +1,91 @@
+/* ============================================
+   Skills.css
+   Section "Compétences"
+   ============================================ */
+
+.skills {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px var(--section-padding-x);
+}
+
+/* ---------- EN-TÊTE ---------- */
+.skills-header {
+  margin-bottom: 50px;
+}
+
+.skills-header p {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.skills-header h2 {
+  font-size: 40px;
+}
+
+/* ---------- GRILLE DES COMPÉTENCES ---------- */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Carte d'une compétence */
+.skill-card {
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  transition: all var(--transition);
+}
+
+/* Effet au survol */
+.skill-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+.skill-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.skill-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) {
+  /* Tablette : 3 colonnes */
+  .skills-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile : 2 colonnes */
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-header h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Petit mobile : 1 colonne */
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,97 @@
+/* ============================================
+   About.css
+   Section "À propos"
+   ============================================ */
+
+.about {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 80px var(--section-padding-x);
+  gap: 60px;
+}
+
+/* ---------- PARTIE GAUCHE ---------- */
+.about-content {
+  flex: 1;
+}
+
+/* Petit label au-dessus du titre (accent color) */
+.about-label {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+/* Titre de la section */
+.about-content h2 {
+  font-size: 40px;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+/* Paragraphes de présentation */
+.about-content p {
+  max-width: 600px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* ---------- PARTIE DROITE (infos) ---------- */
+.about-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Carte d'information */
+.info-item {
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  transition: all var(--transition);
+}
+
+/* Effet au survol : bordure accent + légère translation */
+.info-item:hover {
+  border-color: var(--accent);
+  transform: translateX(6px);
+}
+
+.info-item h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.info-item p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column; /* Passe en colonne sur mobile */
+    gap: 40px;
+    padding: 60px var(--section-padding-x);
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+  }
+
+  .info-item:hover {
+    transform: none; /* Désactive la translation sur mobile */
+  }
+}

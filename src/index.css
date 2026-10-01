@@ -1,0 +1,106 @@
+/* ============================================
+   index.css
+   Styles globaux + variables de thème
+   ============================================ */
+
+/* --------------------------------------------
+   VARIABLES GLOBALES DU THÈME
+   Centralisées ici pour faciliter les modifications
+   -------------------------------------------- */
+:root {
+  /* Couleur de fond principale (bleu nuit très foncé) */
+  --bg-primary: #0f172a;
+  /* Couleur de fond secondaire (légèrement plus claire, pour les cartes) */
+  --bg-secondary: #1e293b;
+  /* Couleur des bordures */
+  --border-color: #334155;
+
+  /* Couleur du texte principal (blanc) */
+  --text-primary: #ffffff;
+  /* Couleur du texte secondaire (gris clair) */
+  --text-secondary: #94a3b8;
+
+  /* Couleur d'accent (le bleu vif de ton choix) */
+  --accent: #3b82f6;
+  /* Couleur d'accent au survol (plus foncée) */
+  --accent-hover: #2563eb;
+
+  /* Rayon des bordures (arrondis cohérents partout) */
+  --radius: 10px;
+  /* Transition standard pour les animations douces */
+  --transition: 0.25s ease;
+
+  /* Largeur du padding horizontal des sections */
+  --section-padding-x: 8%;
+  /* Hauteur de la navbar (utile pour scroll-margin) */
+  --navbar-height: 80px;
+}
+
+/* --------------------------------------------
+   RESET UNIVERSEL
+   Supprime marges/paddings par défaut
+   -------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------
+   STYLE GÉNÉRAL DU CORPS
+   -------------------------------------------- */
+body {
+  font-family:
+    'Inter',              /* Police principale (chargée via Google Fonts) */
+    -apple-system,        /* Fallback macOS */
+    BlinkMacSystemFont,   /* Fallback macOS Chrome */
+    'Segoe UI',           /* Fallback Windows */
+    Roboto,               /* Fallback Android */
+    Arial,                /* Fallback universel */
+    sans-serif;           /* Fallback final */
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Défilement fluide pour les liens d'ancre (#section) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------------------------------------------
+   MARGE DE DÉFILEMENT POUR LES ANCRES
+   Empêche que la navbar cache le haut des sections
+   -------------------------------------------- */
+section {
+  scroll-margin-top: var(--navbar-height);
+}
+
+/* --------------------------------------------
+   STYLE DES TITRES (hiérarchie visuelle)
+   -------------------------------------------- */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* --------------------------------------------
+   STYLE DE BASE DES LIENS
+   -------------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    /* Réduit le padding horizontal sur mobile */
+    --section-padding-x: 5%;
+    /* Réduit la hauteur de la navbar sur mobile */
+    --navbar-height: 70px;
+  }
+}

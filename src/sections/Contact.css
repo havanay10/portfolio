@@ -1,0 +1,84 @@
+/* ============================================
+   Contact.css
+   Section "Contact"
+   ============================================ */
+
+.contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px var(--section-padding-x);
+}
+
+/* ---------- EN-TÊTE ---------- */
+.contact-header {
+  margin-bottom: 50px;
+}
+
+.contact-header > p:first-child {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.contact-header h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.contact-header > p:last-child {
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ---------- GRILLE DES CONTACTS ---------- */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Carte d'un moyen de contact */
+.contact-item {
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  transition: all var(--transition);
+}
+
+/* Effet au survol */
+.contact-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+.contact-item h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.contact-item p {
+  line-height: 1.5;
+  color: var(--text-secondary);
+  word-break: break-word;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  /* Mobile : 1 colonne */
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-header h2 {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,113 @@
+/* ============================================
+   hero.css
+   Section d'accueil (Hero)
+   ============================================ */
+
+.hero {
+  /* Prend toute la hauteur de l'écran moins la navbar */
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* Compense la navbar fixe avec un padding-top */
+  padding: calc(var(--navbar-height) + 40px) var(--section-padding-x) 80px;
+}
+
+/* ---------- TEXTE D'INTRODUCTION ---------- */
+.hero-intro {
+  font-size: 20px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+/* ---------- TITRE PRINCIPAL ---------- */
+.hero-title {
+  font-size: 60px;
+  margin-bottom: 10px;
+  /* Dégradé de couleur pour un effet moderne */
+  background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- SOUS-TITRE ---------- */
+.hero-subtitle {
+  font-size: 28px;
+  font-weight: normal;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* ---------- DESCRIPTION ---------- */
+.hero-description {
+  max-width: 600px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+/* ============================================
+   BOUTONS
+   ============================================ */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Style commun aux deux boutons */
+.hero-buttons button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all var(--transition);
+  border: none;
+}
+
+/* ---------- BOUTON PRINCIPAL (accent) ---------- */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* ---------- BOUTON SECONDAIRE (contour) ---------- */
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 40px; /* Titre plus petit sur mobile */
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+}

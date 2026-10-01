@@ -1,0 +1,112 @@
+/* ============================================
+   Projects.css
+   Section "Projets"
+   ============================================ */
+
+.projects {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px var(--section-padding-x);
+}
+
+/* ---------- EN-TÊTE ---------- */
+.projects-header {
+  margin-bottom: 50px;
+}
+
+.projects-header p {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.projects-header h2 {
+  font-size: 40px;
+}
+
+/* ---------- GRILLE DES PROJETS ---------- */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Carte d'un projet */
+.project-card {
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+
+  display: flex;
+  flex-direction: column;
+
+  transition: all var(--transition);
+}
+
+/* Effet au survol */
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+.project-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+}
+
+/* ---------- TECHNOLOGIES ---------- */
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto; /* Pousse les tags en bas de la carte */
+}
+
+/* Tag individuel de technologie */
+.technologies span {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+
+/* Effet au survol d'un tag */
+.technologies span:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) {
+  /* Tablette : 2 colonnes */
+  .projects-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile : 1 colonne */
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-header h2 {
+    font-size: 28px;
+  }
+}
