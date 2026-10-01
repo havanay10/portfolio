@@ -12,7 +12,11 @@ function Contact() {
       <div className="contact-info">
         <div className="contact-item">
           <h3>Email</h3>
-          <p>raharisonhavanay@gmail.com</p>
+          <p>
+            <a href="mailto:raharisonhavanay@gmail.com">
+              raharisonhavanay@gmail.com
+            </a>
+          </p>
         </div>
         {/* GitHub */}
         <div className="contact-item">
@@ -22,7 +26,13 @@ function Contact() {
         {/* LinkedIn */}
         <div className="contact-item">
           <h3>LinkedIn</h3>
-          <p>linkedin.com/in/Arnot</p>
+          <p><a
+              href="https://linkedin.com/in/Arnot"  /* ← REMPLACE par ton vrai profil */
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin.com/in/Arnot
+            </a></p>
         </div>
       </div>
     </section>

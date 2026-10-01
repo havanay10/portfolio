@@ -70,6 +70,22 @@
 }
 
 /* ============================================
+   LIENS DE CONTACT
+   ============================================ */
+
+.contact-item p a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition);
+  word-break: break-all; /* Évite le débordement sur mobile */
+}
+
+.contact-item p a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
