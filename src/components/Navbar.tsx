@@ -20,9 +20,9 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="logo">
-        ARNOT
-      </div>
+      <a className="logo" href="#hero" aria-label="ARNOT, accueil">
+        <img src="/Arnot-Logo.jfif" alt="ARNOT" />
+      </a>
       {/* Bouton hamburger */}
       <button className="menu-button" onClick={toggleMenu}>{menuOpen ? "✕" : "☰"}</button>
       <ul className={`nav-links ${menuOpen ? "active" : ""}`}>

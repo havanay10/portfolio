@@ -6,6 +6,7 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
+  image: string;
 }
 
 // Tableau contenant nos projets
@@ -15,6 +16,7 @@ const projects: Project[] = [
     description:
       "Logiciel Desktop de gestion de Ressource Humaine",
     technologies: ["Python", "Postgres", "Docker","PyQt5"],
+    image: "/images/smartrh.jfif",
   },
 
   {
@@ -22,6 +24,7 @@ const projects: Project[] = [
     description:
       "Application permettant de simuler une chute libre en utilisant la méthode numérique d'Euler.",
     technologies: ["Python", "Euler", "Mathématiques"],
+    image: "https://picsum.photos/seed/chute-libre-portfolio/900/520",
   },
 
   {
@@ -29,6 +32,7 @@ const projects: Project[] = [
     description:
       "Application d'approximation numérique basée sur les polynômes de Taylor.",
     technologies: ["Python", "Mathématiques", "Numérique"],
+    image: "/images/taylor.jfif",
   },
 ];
 
@@ -47,6 +51,14 @@ function Projects() {
             className="project-card"
             key={project.title}
           >
+            {/* Image provisoire à remplacer par une capture du projet */}
+            <img
+              className="project-image"
+              src={project.image}
+              alt={`Image illustrative du projet ${project.title}`}
+              loading="lazy"
+            />
+
             {/* Nom du projet */}
             <h3>{project.title}</h3>
 
@@ -60,7 +72,6 @@ function Projects() {
                 </span>
               ))}
             </div>
-            <p><a href="{project.repoUrl}" target="_blank" rel="noopener noreferrer">Voir sur Github</a></p>
           </article>
         ))}
       </div>
