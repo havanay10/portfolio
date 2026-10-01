@@ -53,6 +53,7 @@ function Projects() {
           >
             {/* Nom du projet */}
             <h3>{project.title}</h3>
+
             {/* Description du projet */}
             <p>{project.description}</p>
             {/* Technologies utilisées */}
@@ -63,6 +64,7 @@ function Projects() {
                 </span>
               ))}
             </div>
+            <p>Github: {project.repoUrl}</p>
           </article>
         ))}
       </div>
