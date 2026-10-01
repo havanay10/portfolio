@@ -12,11 +12,11 @@ interface Project {
 // Tableau contenant nos projets
 const projects: Project[] = [
   {
-    title: "INVENTIX",
-    repoUrl: "https://github.com/tonprofil/fall-simulator",
+    title: "SmartHR",
+    repoUrl: "https://github.com/havanay10/SmartHR",
     description:
-      "Application web de gestion de stock permettant de gérer les produits, les entrées, les sorties et les fournisseurs.",
-    technologies: ["PHP", "MySQL", "JavaScript"],
+      "Logiciel Desktop de gestion de Ressource Humaine",
+    technologies: ["Python", "Postgres", "Docker","PyQt5"],
   },
 
   {
