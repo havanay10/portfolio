@@ -64,7 +64,7 @@ function Projects() {
                 </span>
               ))}
             </div>
-            <p>Github: {project.repoUrl}</p>
+            <p><a href="{project.repoUrl}">Voir sur Github</a></p>
           </article>
         ))}
       </div>
