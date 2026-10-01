@@ -4,6 +4,7 @@ import "./Projects.css";
 // Définition de la structure d'un projet
 interface Project {
   title: string;
+  repoUrl: string;
   description: string;
   technologies: string[];
 }
@@ -12,6 +13,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "INVENTIX",
+    repoUrl: "https://github.com/tonprofil/fall-simulator",
     description:
       "Application web de gestion de stock permettant de gérer les produits, les entrées, les sorties et les fournisseurs.",
     technologies: ["PHP", "MySQL", "JavaScript"],
@@ -19,6 +21,7 @@ const projects: Project[] = [
 
   {
     title: "Simulation de chute libre",
+    repoUrl: "https://github.com/tonprofil/fall-simulator",
     description:
       "Application permettant de simuler une chute libre en utilisant la méthode numérique d'Euler.",
     technologies: ["Python", "Euler", "Mathématiques"],
@@ -26,6 +29,7 @@ const projects: Project[] = [
 
   {
     title: "Application Taylor",
+    repoUrl: "https://github.com/havanay10/ApproximationPoly",
     description:
       "Application d'approximation numérique basée sur les polynômes de Taylor.",
     technologies: ["Python", "Mathématiques", "Numérique"],

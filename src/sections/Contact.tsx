@@ -17,12 +17,12 @@ function Contact() {
         {/* GitHub */}
         <div className="contact-item">
           <h3>GitHub</h3>
-          <p>github.com/tonprofil</p>
+          <p><a href="https://github.com/havanay10/portfolio" target="_blank" rel="noopener noreferrer">github.com/tonprofil</a></p>
         </div>
         {/* LinkedIn */}
         <div className="contact-item">
           <h3>LinkedIn</h3>
-          <p>linkedin.com/in/tonprofil</p>
+          <p>linkedin.com/in/Arnot</p>
         </div>
       </div>
     </section>
